@@ -1,0 +1,27 @@
+# Arquivos de byte compilados Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Arquivos de backup do editor
+*~
+*.swp
+
+# Arquivos de ambiente virtual
+venv/
+env/
+.venv/
+env_bak/
+.dash_env/
+
+# Logs e arquivos de saída
+logs/
+*.log
+
+# Arquivos de cache de dependências
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Arquivos de configuração de ambiente
+.env
