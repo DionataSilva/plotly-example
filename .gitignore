@@ -1,5 +1,7 @@
 # Arquivos de byte compilados Python
 __pycache__/
+app/__pycache__/
+app/*/__pycache__/
 *.pyc
 *.pyo
 *.pyd
@@ -13,7 +15,7 @@ venv/
 env/
 .venv/
 env_bak/
-.dash_env/
+dash_env/
 
 # Logs e arquivos de saída
 logs/

@@ -24,17 +24,17 @@ Recomendamos o uso de um ambiente virtual para isolar as dependências do projet
 Crie um ambiente virtual (substitua myenv pelo nome de sua escolha):
 
 ```bash 
-python -m venv myenv
+python3 -m venv dash_env
 ```
 Ative o ambiente virtual (Windows):
 
 ```bash 
-myenv\Scripts\activate
+dash_env\Scripts\activate
 ```
 Ative o ambiente virtual (Linux/macOS):
 
 ```bash 
-source myenv/bin/activate
+source dash_env/bin/activate
 ```
 Executando o Projeto
 Para iniciar o aplicativo, execute o seguinte comando no terminal:
