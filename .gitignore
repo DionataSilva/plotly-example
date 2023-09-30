@@ -9,6 +9,8 @@ app/*/__pycache__/
 # Arquivos de backup do editor
 *~
 *.swp
+.vscode/
+temp/
 
 # Arquivos de ambiente virtual
 venv/

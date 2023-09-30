@@ -1,11 +1,22 @@
 import dash_mantine_components as dmc
+import pandas as pd
 
-class RadioGroup(dmc.RadioGroup):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
 
-        self.options = [
-            dmc.Radio(i, value=i) for i in ['pop', 'lifeExp', 'gdpPercap']
+class CustomRadioGroup(dmc.RadioGroup):
+    def __init__(self, df, **kwargs):
+        # Filtra as colunas do DataFrame que contêm valores numéricos
+        numeric_columns = [
+            col for col in df.columns if pd.api.types.is_numeric_dtype(df[col])
         ]
-        self.value = 'lifeExp'
-        self.size = 'sm'
+
+        defaultOption = numeric_columns[0] if numeric_columns else None
+
+        super().__init__(
+            id=kwargs.get("id", "custom-dmc-radio-item"),
+            value=kwargs.get("defaultOption", defaultOption),
+            size=kwargs.get("size", "sm"),
+            children=kwargs.get(
+                "options",
+                [dmc.Radio(option, value=option) for option in numeric_columns],
+            ),
+        )

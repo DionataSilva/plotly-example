@@ -3,27 +3,20 @@
 from dash_mantine_components import Grid, Container, Title, RadioGroup, Grid, Col, Radio, Navbar, NavLink
 from dash import dash_table, dcc, html
 from dash_iconify import DashIconify
+from components.datatable import CustomDataTable
+from components.radio_group import CustomRadioGroup
+from components.title import CustomTitle
 
 
 def create_layout(df):
     layout = Grid([
         Col([nav_bar()], span=1),
         Col([
-            Title('My First App with Data, Graph, and Controls', color="blue", size="h3"),
-            RadioGroup(
-                [Radio(i, value=i) for i in  ['pop', 'lifeExp', 'gdpPercap']],
-                id='my-dmc-radio-item',
-                value='lifeExp',
-                size="sm"
-            ),
+            CustomTitle(text='Dash de exemplo'),
+            CustomRadioGroup(df),
             Container([
                 dcc.Graph(figure={}, id='graph-placeholder'),
-                dash_table.DataTable(
-                        id='data-table', 
-                        data=df.to_dict("records"),
-                        page_size=12, 
-                        style_table={'overflowX': 'auto'}
-                    ),
+                CustomDataTable(df),
             ], fluid=True),
         ], span=10),
 
